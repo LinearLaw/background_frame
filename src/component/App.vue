@@ -1,19 +1,20 @@
 <style lang="less" scoped>
   #index{
     width:100%;
-    height:100%;
+    height:80%;
     #header{
       height:120px;
-      background-color:skyblue;
     }
     #router{
-      float:left;
       height:100%;
+      float:left;
       width:300px;
+      margin-left:30px;
+      margin-top:10px;
       >ul{
           border:1px solid #f0f0f0;
           border-radius:5px;
-          height:100%;      
+          height:90%;      
         >li{
             width:100%;
             height:30px;
@@ -75,10 +76,10 @@
       <!--<div>这里是路由显示区域</div>-->
       <router-view></router-view>
     </section>
-
+     <!-- 这里的footer不一定会用到 
     <footer id="footer">
       <myfooter></myfooter>
-    </footer>
+    </footer>-->
   </div>
 
 </template>
@@ -98,7 +99,7 @@
     },
     data:function(){
       return {
-          
+
         }
     },
     methods:{
