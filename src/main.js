@@ -12,10 +12,10 @@ import "./less/common.less"
 /**
  * @desc 引入需要配置路由的组件
  */
-import page_1 from './component/Page_1.vue';
-import page_2 from './component/Page_2.vue';
-import page_3 from './component/Page_3.vue';
-import page_4 from './component/Page_4.vue';
+import page_1 from './component/pages/Page_1.vue';
+import page_2 from './component/pages/Page_2.vue';
+import page_3 from './component/pages/Page_3.vue';
+import page_4 from './component/pages/Page_4.vue';
 
 /**
  * @desc 注册路由、配置路由规则

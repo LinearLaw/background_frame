@@ -98,7 +98,7 @@
     },
     data:function(){
       return {
-          selact:""
+          
         }
     },
     methods:{
