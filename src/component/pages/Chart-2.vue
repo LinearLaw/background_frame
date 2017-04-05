@@ -24,7 +24,6 @@
     .echarts{
         width:400px;
         height:400px;
-        margin-right:10px;
         float: left;
     }
     

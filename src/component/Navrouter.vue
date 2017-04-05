@@ -4,17 +4,25 @@
             <el-col :span="8">
                 <!--<h5>带 icon</h5>-->
                 <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
-                <el-submenu index="1">
-                    <template slot="title"><i class="el-icon-message"></i>主页面图表</template>
-                    <el-menu-item-group>
-                        <!--<template slot="title">分组一</template>-->
-                        <el-menu-item index="1-1"><router-link to="/pageoneone">基础图表</router-link></el-menu-item>
-                        <el-menu-item index="1-2"><router-link to="/pageonetwo">扇形图</router-link></el-menu-item>
-                    </el-menu-item-group>
-                </el-submenu>
-                <el-menu-item index="2"><i class="el-icon-menu"></i><router-link to="/pagetwo" >点击切换pagetwo</router-link></el-menu-item>
-                <el-menu-item index="3"><i class="el-icon-setting"></i><router-link to="/pagethree" >点击切换pagethree</router-link></el-menu-item>
-                <el-menu-item index="4"><i class="el-icon-setting"></i><router-link to="/pagefour" >点击切换pagefour</router-link></el-menu-item>
+                    <el-menu-item index="2"><i class="el-icon-menu"></i><router-link to="/" >首页</router-link></el-menu-item>
+                    <el-submenu index="1">
+                        <template slot="title"><i class="el-icon-message"></i>主页面图表</template>
+                        <el-menu-item-group>
+                            <!--<template slot="title">分组一</template>-->
+                            <el-menu-item index="1-1"><router-link to="/chart_1">基础图表</router-link></el-menu-item>
+                            <el-menu-item index="1-2"><router-link to="/chart_2">扇形图</router-link></el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+                    <el-submenu index="2">
+                        <template slot="title"><i class="el-icon-menu"></i>表格</template>
+                        <el-menu-item-group>
+                            <el-menu-item index="1-1"><router-link to="/table_1">表格信息</router-link></el-menu-item>
+                            <el-menu-item index="1-2"><router-link to="/table_2">添加角色</router-link></el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+                    <el-menu-item index="3"><i class="el-icon-document"></i><router-link to="/pagetwo" >点击切换pagetwo</router-link></el-menu-item>
+                    <el-menu-item index="4"><i class="el-icon-date"></i><router-link to="/pagethree" >点击切换pagethree</router-link></el-menu-item>
+                    <el-menu-item index="5"><i class="el-icon-setting"></i><router-link to="/pagefour" >点击切换pagefour</router-link></el-menu-item>
                 </el-menu>
             </el-col>
         </el-row>
@@ -40,7 +48,7 @@
                             >ul{
                                 >.el-menu-item{
                                     >a{
-                                        padding:20px;    
+                                        padding:20px; 
                                         padding-right:162px;
                                         color:#48576a;
                                     }
@@ -56,7 +64,8 @@
                 >.el-menu-item{
                     >a{
                         padding:20px;    
-                        padding-right:125px;                                
+                        padding-right:125px;    
+                        padding-left:0;                            
                         color:#48576a;                    
                     }
                 }

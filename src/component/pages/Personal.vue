@@ -56,10 +56,7 @@
                 </el-form-item>
             </el-form>
         </div>
-
-
-</div>
-
+    </div>
 </template>
 <style scoped>
     .personal_title{
@@ -83,7 +80,7 @@
                 },
                 rules: {
                     name: [
-                        { required: true, message: '请输入活动名称', trigger: 'blur' },
+                        { required: true, message: '请输入昵称', trigger: 'blur' },
                         { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
                     ],
                     region: [

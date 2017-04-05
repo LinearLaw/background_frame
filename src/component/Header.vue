@@ -30,7 +30,7 @@
         box-sizing:border-box;
     }
     .head{
-        // padding:10px 20px;      
+        /*// padding:10px 20px;      */
         height:100%;
         background-color:#242f42;
         margin-left:300px;
@@ -70,7 +70,7 @@
             }
             >.personal{
                 >a{
-                    // color:#1f2d3d;
+                    /*// color:#1f2d3d;*/
                     line-height:44px;                
                     color:#a9b0c2;
                 }
