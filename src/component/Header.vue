@@ -2,7 +2,7 @@
     <div>
         <!-- <h2>This is header!</h2>-->
         <section id="logo">
-            <div>这是logo</div>
+            <div>This is Logo</div>
         </section>
 
         <section id="header_right">

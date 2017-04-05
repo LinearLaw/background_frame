@@ -9,33 +9,10 @@
       height:100%;
       float:left;
       width:300px;
-      margin-left:30px;
-      margin-top:10px;
-      >ul{
-          border:1px solid #f0f0f0;
-          border-radius:5px;
-          height:90%;      
-        >li{
-            width:100%;
-            height:30px;
-          >a{
-            width:100%;
-            height:100%;
-            display:block;
-            padding-left:20px;            
-            cursor:pointer;
-            font:14px/30px "";
-            &:hover{
-              background-color:skyblue;
-              color:#fff;
-            }
-          }
-          &+li{
-            border-top:1px solid #f0f0f0;
-          }
-        }
+      /*padding-left:30px;
+      padding-top:10px;*/
+      background-color: #eef1f6;
       }
-    }
     #routerView{
       float:left;
       height:100%;
@@ -56,20 +33,7 @@
 
     <section id="router">
       <!--<div>这里是路由</div>-->
-      <ul>
-        <li>
-          <router-link to="/pageone" >点击切换pageone</router-link>
-        </li>
-        <li>
-          <router-link to="/pagetwo" >点击切换pagetwo</router-link>
-        </li>
-        <li>
-          <router-link to="/pagethree" >点击切换pagethree</router-link>
-        </li>
-        <li>
-          <router-link to="/pagefour" >点击切换pagefour</router-link>
-        </li>
-      </ul>
+      <navrooter></navrooter>
     </section>
 
     <section id="routerView">
@@ -92,10 +56,12 @@
    */
   import Header from './Header.vue';
   import Footer from './Footer.vue';
+  import Navrouter from './Navrouter.vue'
   export default{
     components:{
       myheader:Header,
-      myfooter:Footer
+      myfooter:Footer,
+      navrooter:Navrouter
     },
     data:function(){
       return {
