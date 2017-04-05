@@ -8,15 +8,15 @@
     |-dist              生成的静态页面文件夹
     |-node_modules      项目依赖
 
-    |-src
+    |-src               开发文件夹
+    |---less            less文件夹    
+    |---images          图片文件夹
     |---component       vue组件文件夹
     |-----pages         子组件文件夹
     |-----App.vue       主要的vue组件
-
-    |---less            less文件夹
 
     |---index.html      主页面
     |---main.js         js入口文件
 
 
-    ————————————现在还丑的一匹，更新中
+    ————————————更新中

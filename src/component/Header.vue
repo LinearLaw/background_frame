@@ -3,7 +3,7 @@
         <!-- <h2>This is header!</h2>-->
         <section id="logo">
             <div class="avatar">
-                <img :src="avatar_src" alt="">
+                <router-link to="/avatar"><img :src="avatar_src" alt=""></router-link>
             </div>
             <div class="username">
                 <p class="name">{{username}}</p>
@@ -30,7 +30,7 @@
         box-sizing:border-box;
     }
     .head{
-        padding:10px 20px;      
+        // padding:10px 20px;      
         height:100%;
         background-color:#242f42;
         margin-left:300px;
@@ -50,7 +50,7 @@
                 margin-left:20px;
                 float:left;
                 overflow:hidden;
-                >img{
+                img{
                     height:100%;
                     width:100%;
                 }

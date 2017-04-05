@@ -14,9 +14,9 @@
         </div>
     </div>
 </template>
-<style scoped>
+<style lang="less" scoped>
     .page12{
-        padding:30px;
+        /*padding:30px;*/
     }
     .title{
         margin-bottom: 30px;
@@ -24,7 +24,7 @@
     .echarts{
         width:400px;
         height:400px;
-        margin-right:30px;
+        margin-right:10px;
         float: left;
     }
     

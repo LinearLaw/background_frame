@@ -23,6 +23,7 @@ import page_2 from './component/pages/Page_2.vue';
 import page_3 from './component/pages/Page_3.vue';
 import page_4 from './component/pages/Page_4.vue';
 import personal from './component/pages/Personal.vue';
+import avatar from './component/pages/Avatar.vue';
 
 /**
  * @desc 注册路由、配置路由规则
@@ -37,6 +38,7 @@ const router = new VueRouter({
     { path: '/pagethree', component: page_3 },
     { path: '/pagefour', component: page_4 },
     { path: '/personal', component: personal },
+    { path: '/avatar', component: avatar },
   ]
 })
 /**

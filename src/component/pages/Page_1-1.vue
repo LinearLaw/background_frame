@@ -17,7 +17,7 @@
 </template>
 <style lang="less" scoped>
     .page11{
-        padding:30px;
+        /*padding:30px;*/
     }
     header{
         margin-bottom: 20px;
