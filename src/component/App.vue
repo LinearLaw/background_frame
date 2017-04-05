@@ -1,16 +1,19 @@
 <style lang="less" scoped>
   #index{
     width:100%;
-    height:80%;
+    height:100%;
+    padding-top:120px;
     #header{
+      position:absolute;
+      top:0;
+      left:0;
+      width: 100%;
       height:120px;
     }
     #router{
       height:100%;
-      float:left;
       width:300px;
-      /*padding-left:30px;
-      padding-top:10px;*/
+      float:left;
       background-color: #eef1f6;
       }
     #routerView{
@@ -27,25 +30,26 @@
 <template>
   <div id="index">
 
+    <!--顶部导航-->
     <header id="header">
       <myheader></myheader>
     </header>
 
+    <!--这里是路由-->
     <section id="router">
-      <!--<div>这里是路由</div>-->
       <navrooter></navrooter>
     </section>
 
+    <!--这里是路由显示区域-->
     <section id="routerView">
-      <!--<div>这里是路由显示区域</div>-->
       <router-view></router-view>
     </section>
+
      <!-- 这里的footer不一定会用到 
     <footer id="footer">
       <myfooter></myfooter>
     </footer>-->
   </div>
-
 </template>
 
 <script>

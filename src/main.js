@@ -16,7 +16,9 @@ import "./less/common.less"
 /**
  * @desc 引入需要配置路由的组件
  */
-import page_1 from './component/pages/Page_1.vue';
+import main from './component/pages/main.vue'
+import page_1_1 from './component/pages/Page_1-1.vue';
+import page_1_2 from './component/pages/Page_1-2.vue';
 import page_2 from './component/pages/Page_2.vue';
 import page_3 from './component/pages/Page_3.vue';
 import page_4 from './component/pages/Page_4.vue';
@@ -28,7 +30,9 @@ import personal from './component/pages/Personal.vue';
 Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
-    { path: '/pageone', component: page_1 },
+    { path: '/', component: main },
+    { path: '/pageoneone', component: page_1_1 },
+    { path: '/pageonetwo', component: page_1_2 },
     { path: '/pagetwo', component: page_2 },
     { path: '/pagethree', component: page_3 },
     { path: '/pagefour', component: page_4 },

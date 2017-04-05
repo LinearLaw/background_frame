@@ -1,13 +1,18 @@
 <template>
-    <div>
+    <div class="head">
         <!-- <h2>This is header!</h2>-->
         <section id="logo">
-            <div>This is Logo</div>
+            <div class="avatar">
+                <img :src="avatar_src" alt="">
+            </div>
+            <div class="username">
+                <p class="name">{{username}}</p>
+                <p>Welcome!</p>
+            </div>
         </section>
-
         <section id="header_right">
-            <div><router-link to="/personal" >个人中心</router-link></div>
-            <el-button type="text" @click="dialogVisible = true">退出</el-button>
+            <div class="personal"><router-link to="/personal" >个人中心</router-link></div>
+            <el-button type="text" @click="dialogVisible = true" class="logout">退出</el-button>
 
             <el-dialog title="提示" v-model="dialogVisible" size="tiny">
                 <span>是否退出登录？</span>
@@ -16,11 +21,6 @@
                     <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
                 </span>
             </el-dialog>
-
-        </section>
-
-        <section>
-        
         </section>
     </div>
 </template>
@@ -29,33 +29,60 @@
     *{
         box-sizing:border-box;
     }
-    div{
+    .head{
         padding:10px 20px;      
         height:100%;
-        background-color:skyblue;
-        >h2{
-
-        }
+        background-color:#242f42;
+        margin-left:300px;
         #logo{
             height:100%;
-            float:left;
+            width:300px;
+            position:absolute;
+            top:0;
+            left:0;
+            background:#77869f;
+            padding:10px;
+            >.avatar{
+                height:100px;
+                width:100px;
+                border-radius:50%;
+                border:4px solid #f0f0f0;
+                margin-left:20px;
+                float:left;
+                overflow:hidden;
+                >img{
+                    height:100%;
+                    width:100%;
+                }
+            }
+            >.username{
+                float:left;
+                padding:20px 30px;
+                font-size:20px;
+                line-height:30px;
+                color:#f0f0f0;
+            }
         }
         #header_right{
             float:right;
-            >div,button{
+            >.personal,.logout{
                 float:left;
             }
-            >div{
+            >.personal{
                 >a{
-                    color:#1f2d3d;
+                    // color:#1f2d3d;
+                    line-height:44px;                
+                    color:#a9b0c2;
                 }
             }
             >.el-button{
                 font-size:16px;
                 line-height: 24px;   
+                margin-left:20px;
             }
             >.el-button--text{
-                color:#1f2d3d;
+                // color:#1f2d3d;
+                color:#a9b0c2;
             }
         }
     }
@@ -64,7 +91,9 @@
     export default {
         data() {
             return {
-                dialogVisible: false
+                dialogVisible: false,
+                avatar_src:"./src/images/avatar.jpg",
+                username:'LinearLaw'
             };
         }
     };
