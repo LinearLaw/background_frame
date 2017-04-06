@@ -94,16 +94,16 @@
       /**
        * @desc 过滤数据，待优化
        */
-    //   dataFilter:(val)=>{
-    //     // console.log(val);
-    //     for(var i=0;i<val.length;i++){
-    //       for(var key in val[i]){
-    //         if(key.indexOf(this.input2) != -1){
-    //           this.list.push({key:val[i][key]});
-    //       }
-    //     } 
-    //   }
-    // }
+      dataFilter:(val)=>{
+        // console.log(val);
+        for(var i=0;i<val.length;i++){
+          for(var key in val[i]){
+            if(key.indexOf(this.input2) != -1){
+              this.list.push({key:val[i][key]});
+          }
+        } 
+      }
+    }
   }
 }
 </script>
