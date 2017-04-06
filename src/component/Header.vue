@@ -79,6 +79,7 @@
                 font-size:16px;
                 line-height: 24px;   
                 margin-left:20px;
+                margin-right:20px;
             }
             >.el-button--text{
                 // color:#1f2d3d;

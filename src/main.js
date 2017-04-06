@@ -12,16 +12,22 @@ import App from './component/App.vue'
  */
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+import VueQuillEditor from 'vue-quill-editor'
+
 import "./less/common.less"
 /**
  * @desc 引入需要配置路由的组件
  */
 import main from './component/pages/main.vue'
+import login from './component/Login.vue'
 import chart_1 from './component/pages/Chart-1.vue';
 import chart_2 from './component/pages/Chart-2.vue';
 import table_1 from './component/pages/Table-1.vue';
 import table_2 from './component/pages/Table-2.vue';
-import page_4 from './component/pages/Page_4.vue';
+import setting from './component/pages/Setting.vue';
+import docu from './component/pages/Document.vue';
+import adddoc from './component/pages/AddDocument.vue';
+import contact from './component/pages/Contact.vue';
 import personal from './component/pages/Personal.vue';
 import avatar from './component/pages/Avatar.vue';
 
@@ -29,14 +35,19 @@ import avatar from './component/pages/Avatar.vue';
  * @desc 注册路由、配置路由规则
  */
 Vue.use(VueRouter)
+Vue.use(VueQuillEditor)
 const router = new VueRouter({
   routes: [
     { path: '/', component: main },
+    { path: '/login', component: login },
     { path: '/chart_1', component: chart_1 },
     { path: '/chart_2', component: chart_2 },
     { path: '/table_1', component: table_1 },
     { path: '/table_2', component: table_2 },
-    { path: '/pagefour', component: page_4 },
+    { path: '/setting', component: setting },
+    { path: '/document', component: docu },
+    { path: '/document/adddoc', component: adddoc },
+    { path: '/contact', component: contact },
     { path: '/personal', component: personal },
     { path: '/avatar', component: avatar },
   ]

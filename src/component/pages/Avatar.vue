@@ -2,7 +2,7 @@
     <div class="avatar_uploads">
         
         <!--<h2>Now you can upload your Avatar Pics!</h2>-->
-        <header>
+        <header class="avatarInfo">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
                 <el-breadcrumb-item :to="{ path: '/avatar'}">头像设置</el-breadcrumb-item>
@@ -71,7 +71,7 @@
         width: 100%;
         height: 100%;
     }
-    header{
+    .avatarInfo{
         margin-bottom:20px;
     }
     .avatar_button{

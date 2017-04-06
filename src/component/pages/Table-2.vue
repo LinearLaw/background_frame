@@ -1,157 +1,126 @@
 <template>
     <div>
-        <el-table :data="tableData3" border tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
-            <el-table-column type="selection" width="55"></el-table-column>
-            <el-table-column label="日期" width="120">
-                <template scope="scope">{{ scope.row.date }}</template>
-            </el-table-column>
-            <el-table-column prop="name" label="姓名" width="120"></el-table-column>
-            <el-table-column prop="address" label="地址" show-overflow-tooltip></el-table-column>
-            <el-table-column label="操作">
-                <template scope="scope">
-
-                    <el-button size="small" type="info" @click="editInfo(scope.$index)">编辑</el-button>
-
-
-                    <el-dialog title="编辑信息" v-model="dialogFormVisible">
-                    <el-form :model="form">
-                        <el-form-item label="日期" :label-width="formLabelWidth">
-                            <el-input v-model="form.date" auto-complete="off"></el-input>
+        <div class="personal_title">
+            <el-breadcrumb separator="/">
+                <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+                <el-breadcrumb-item>表格</el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: '/personal'}">添加信息</el-breadcrumb-item>
+            </el-breadcrumb>
+        </div>
+        <div class="content">
+            <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+                <el-form-item label="姓名" prop="name">
+                    <el-input v-model="ruleForm.name"></el-input>
+                </el-form-item>
+                <el-form-item label="地区" prop="region">
+                    <el-select v-model="ruleForm.region" placeholder="请选择地区">
+                        <el-option label="地区一" value="shanghai"></el-option>
+                        <el-option label="地区二" value="beijing"></el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="入职时间" required>
+                    <el-col :span="11">
+                        <el-form-item prop="date1">
+                            <el-date-picker type="date" placeholder="选择日期" v-model="ruleForm.date1" style="width: 100%;"></el-date-picker>
                         </el-form-item>
-                        <el-form-item label="姓名" :label-width="formLabelWidth">
-                            <el-input v-model="form.name" auto-complete="off"></el-input>
+                    </el-col>
+                    <el-col class="line" :span="2">-</el-col>
+                    <el-col :span="11">
+                        <el-form-item prop="date2">
+                            <el-time-picker type="fixed-time" placeholder="选择时间" v-model="ruleForm.date2" style="width: 100%;"></el-time-picker>
                         </el-form-item>
-                        <el-form-item label="地址" :label-width="formLabelWidth">
-                            <el-input v-model="form.address" auto-complete="off"></el-input>
-                        </el-form-item>
-                    </el-form>
-
-
-                    <div slot="footer" class="dialog-footer">
-                        <el-button @click="dialogFormVisible = false">取 消</el-button>
-                        <el-button type="primary" @click="saveInfo(scope.$index)">确 定</el-button>
-                    </div>
-                    </el-dialog>
-
-                    <el-button size="small" type="danger" @click="open2(scope.$index)">删除</el-button>
-                </template>
-            </el-table-column>
-        </el-table>
+                    </el-col>
+                </el-form-item>
+                <el-form-item label="是否管理员" prop="delivery">
+                    <el-switch on-text="" off-text="" v-model="ruleForm.delivery"></el-switch>
+                </el-form-item>
+                <el-form-item label="技术栈" prop="type">
+                    <el-checkbox-group v-model="ruleForm.type">
+                        <el-checkbox label="VueJS" name="type"></el-checkbox>
+                        <el-checkbox label="AngularJS" name="type"></el-checkbox>
+                        <el-checkbox label="React" name="type"></el-checkbox>
+                        <el-checkbox label="jQuery" name="type"></el-checkbox>
+                    </el-checkbox-group>
+                </el-form-item>
+                <el-form-item label="性别" prop="resource">
+                    <el-radio-group v-model="ruleForm.resource">
+                        <el-radio label="男"></el-radio>
+                        <el-radio label="女"></el-radio>
+                    </el-radio-group>
+                </el-form-item>
+                <el-form-item label="个人描述" prop="desc">
+                    <el-input type="textarea" v-model="ruleForm.desc"></el-input>
+                </el-form-item>
+                <el-form-item>
+                    <el-button type="primary" @click="submitForm(ruleForm)">保存</el-button>
+                    <el-button @click="resetForm(ruleForm)">重置</el-button>
+                </el-form-item>
+            </el-form>
+        </div>
     </div>
-  
 </template>
+<style scoped>
+    .personal_title{
+        margin-bottom:20px;
+    }
+</style>
 
 <script>
-  export default {
-    data() {
-      return {
-          /**
-           * @desc 显示在表格中的数据，是一个数组
-           * @param {array} tableData3 
-           */
-        tableData3: [{
-          date: '2016-05-03',
-          name: '风来吴山',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '鹤归孤山',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '梅暗香',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-01',
-          name: '双曜亭',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-08',
-          name: '上阳宫观风殿',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-06',
-          name: '引仙水榭',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-07',
-          name: '徽山书院',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }],
-        multipleSelection: [],
-
-        /**
-         * @desc 确认框的弹出和隐藏 
-         * @param {boolean} dialogTableVisible 
-         */
-        dialogTableVisible: false,
-
-        /**
-         * @desc form表单的显示和隐藏
-         * @param {boolean} dialogFormVisible
-         */
-        dialogFormVisible: false,
-
-        /**
-         * @desc 弹出的form表单的初始化信息
-         * @param {object} form 
-         */
-        form: {
-            date:'',
-            name:'',
-            address:''
+    import validate from "async-validator"
+    export default {
+        data() {
+            return {
+                ruleForm: {
+                    name: '',
+                    region: '',
+                    date1: '',
+                    date2: '',
+                    delivery: false,
+                    type: [],
+                    resource: '',
+                    desc: ''
+                },
+                rules: {
+                    name: [
+                        { required: true, message: '请输入姓名', trigger: 'blur' },
+                        { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+                    ],
+                    region: [
+                        { required: true, message: '请选择地区', trigger: 'change' }
+                    ],
+                    date1: [
+                        { type: 'date', required: true, message: '请选择日期', trigger: 'change' }
+                    ],
+                    date2: [
+                        { type: 'date', required: true, message: '请选择时间', trigger: 'change' }
+                    ],
+                    type: [
+                        { type: 'array', required: true, message: '请至少选择一个技术栈', trigger: 'change' }
+                    ],
+                    resource: [
+                        { required: true, message: '请选择性别', trigger: 'change' }
+                    ],
+                    desc: [
+                        { required: true, message: '请填写个人描述', trigger: 'blur' }
+                    ]
+                }
+            };
         },
-
-        formLabelWidth: '120px'
-      }
-    },
-
-    methods: {
-      handleSelectionChange(val) {
-        this.multipleSelection = val;
-      },
-      handleEdit(index, row) {
-        console.log(index, row);
-      },
-
-      /**
-       * @desc 删除按钮 
-       * @param {number} index 当前点击的元素在数组中的索引
-       */
-      open2(index) {
-            this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
-            confirmButtonText: '确定',
-            cancelButtonText: '取消',
-            type: 'warning'
-        }).then(() => {
-            this.tableData3.splice(index,1);
-            this.$message({
-                type: 'success',
-                message: '删除成功!'
-            });
-        }).catch(() => {
-            this.$message({
-                type: 'info',
-                message: '已取消删除'
-            });          
-        });
-      },
-      /**
-       * @desc 点击编辑按钮，编辑框弹出，并将该索引下的内容显示在表单中
-       * @param {number} index 当前点击的元素在数组中的索引
-       */
-      editInfo(index){
-        this.dialogFormVisible = true;
-        this.form = this.tableData3[index];
-      },
-      /**
-       * @desc 在弹出的编辑框中点击确认按钮，将form的数据输出到指定的data中
-       * @param {number} index 代表了该元素在数组中的索引
-       */
-      saveInfo(index){
-        this.dialogFormVisible = false;
-        this.tableData3[index] = this.form;
-      }
+        methods: {
+            submitForm(formName) {
+                new validate(this.rules).validate(formName,(error,fields) => {
+                    if (error) {
+                        alert('请完善表单再进行提交！');
+                        return false;                        
+                    } else {
+                        console.log(formName);
+                        alert('提交成功！');
+                    }
+                });
+            },
+            resetForm(formName) {
+                this.$refs[formName].resetFields();
+            }
+        }
     }
-  }
 </script>

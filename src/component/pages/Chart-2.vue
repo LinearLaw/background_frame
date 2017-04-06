@@ -3,6 +3,7 @@
         <div class="title">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+                <el-breadcrumb-item>主页面图表</el-breadcrumb-item>
                 <el-breadcrumb-item>折线图&扇形图</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
@@ -15,9 +16,6 @@
     </div>
 </template>
 <style lang="less" scoped>
-    .page12{
-        /*padding:30px;*/
-    }
     .title{
         margin-bottom: 30px;
     }
@@ -26,8 +24,6 @@
         height:400px;
         float: left;
     }
-    
-    
 </style>
 <script>
     import IEcharts from 'vue-echarts-v3';
