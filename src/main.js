@@ -13,12 +13,11 @@ import App from './component/App.vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import VueQuillEditor from 'vue-quill-editor'
-
 import "./less/common.less"
 /**
  * @desc 引入需要配置路由的组件
  */
-import main from './component/pages/main.vue'
+import main from './component/pages/Main.vue'
 import login from './component/Login.vue'
 import chart_1 from './component/pages/Chart-1.vue';
 import chart_2 from './component/pages/Chart-2.vue';
@@ -36,6 +35,7 @@ import avatar from './component/pages/Avatar.vue';
  */
 Vue.use(VueRouter)
 Vue.use(VueQuillEditor)
+
 const router = new VueRouter({
   routes: [
     { path: '/', component: main },
