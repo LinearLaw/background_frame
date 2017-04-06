@@ -41,10 +41,10 @@
             top:0;
             left:0;
             background:#77869f;
-            padding:10px;
+            padding:15px;
             >.avatar{
-                height:100px;
-                width:100px;
+                height:90px;
+                width:90px;
                 border-radius:50%;
                 border:4px solid #f0f0f0;
                 margin-left:20px;

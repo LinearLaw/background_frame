@@ -8,9 +8,6 @@
                 <el-breadcrumb-item :to="{ path: '/avatar'}">头像设置</el-breadcrumb-item>
             </el-breadcrumb>
         </header>
-        <!--<div class="avatar_title">
-            <h1>Click the pics to upload your avatar</h1>
-        </div>-->
         <div class="saying">
             <i class="el-icon-picture"></i>
             <span>头像图片</span>
@@ -50,6 +47,9 @@
             handleAvatarSuccess(res, file) {
                 this.imageUrl = URL.createObjectURL(file.raw);
             },
+            /**
+             * @desc 上传图片时设置验证规则
+             */
             beforeAvatarUpload(file) {
                 const isJPG = file.type === 'image/jpeg';
                 const isLt2M = file.size / 1024 / 1024 < 2;

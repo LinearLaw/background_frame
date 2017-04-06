@@ -53,9 +53,7 @@
             }
         },
         methods: {
-            onSubmit() {
-                console.log('submit!');
-            }
+
         }
     }
 </script>

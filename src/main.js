@@ -45,8 +45,12 @@ const router = new VueRouter({
     { path: '/table_1', component: table_1 },
     { path: '/table_2', component: table_2 },
     { path: '/setting', component: setting },
-    { path: '/document', component: docu },
-    { path: '/document/adddoc', component: adddoc },
+    { path: '/document', component: docu ,
+        children:[
+          { path: 'adddoc', component: adddoc }
+        ]
+    },
+    // { path: '/document/adddoc', component: adddoc },
     { path: '/contact', component: contact },
     { path: '/personal', component: personal },
     { path: '/avatar', component: avatar },

@@ -107,6 +107,9 @@
             };
         },
         methods: {
+            /**
+             * @desc 提交表单时进行验证表单，成功时进行提示
+             */
             submitForm(formName) {
                 new validate(this.rules).validate(formName,(error,fields) => {
                     if (error) {

@@ -63,6 +63,9 @@
             }
         }),
         methods: {
+            /**
+             * @desc 点击按钮后生成随机数，加载到数据中
+             */
             doRandom() {
                 const that = this;
                 let data = [];

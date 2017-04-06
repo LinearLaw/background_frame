@@ -87,44 +87,44 @@
                     {
                         id: 0,
                         date: "2017-05-03",
-                        title: "vue-从入门到放弃",
-                        src: "#"
+                        title: "Vue-从入门到放弃",
+                        src: ""
                     },
                     {
                         id: 1,
                         date: "2017-03-03",
-                        title: "react-从死记到熟练",
-                        src: "#"
+                        title: "React-从死记到硬背",
+                        src: ""
                     },
                     {
                         id: 2,
                         date: "2017-04-03",
-                        title: "bootstrap-从膨胀到上天",
-                        src: "#"
+                        title: "Bootstrap-从膨胀到上天",
+                        src: ""
                     },
                     {
                         id: 3,
                         date: "2017-02-03",
-                        title: "jquery-从精通到咸鱼",
-                        src: "#"
+                        title: "jQuery-从精通到咸鱼",
+                        src: ""
                     },
                     {
                         id: 4,
                         date: "2017-01-22",
-                        title: "angular-从放弃到抛弃",
-                        src: "#"
+                        title: "Angular-从放弃到抛弃",
+                        src: ""
                     },
                     {
                         id: 5,
                         date: "2017-01-22",
-                        title: "angular-从放弃到抛弃",
-                        src: "#"
+                        title: "TypeScript-从一脸xx到万脸xx",
+                        src: ""
                     },
                     {
                         id: 6,
                         date: "2017-01-22",
-                        title: "angular-从放弃到抛弃",
-                        src: "#"
+                        title: "Materialize-从零到负一",
+                        src: ""
                     }
                 ]
             }
@@ -139,6 +139,9 @@
             deldoc: (index) => {
                 console.log(index);
             },
+            /**
+             * @desc 点击删除按钮将对应的数据从数组中删除
+             */
             open2(index) {
                 this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
                     confirmButtonText: '确定',

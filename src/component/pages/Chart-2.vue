@@ -32,6 +32,9 @@
             IEcharts
         },
         data: () => ({
+            /**
+             * @desc line表示折线图，在这里配置折线图的数据
+             */
             line: {
                 color:["#20a0ff","#13CE66","#F7BA2A","#FF4949"],
                 title: {
@@ -49,6 +52,9 @@
                     }
                 ]
             },
+            /**
+             * @desc line表示扇形图，在这里配置扇形图的数据
+             */
             pie: {
                 color:["#20a0ff","#13CE66","#F7BA2A","#FF4949","#61a0a8"],
                 title : {

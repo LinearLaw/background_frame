@@ -105,6 +105,9 @@
             };
         },
         methods: {
+            /**
+             * @desc 表单提交时进行验证，验证通过则提交，不通过则提示
+             */
             submitForm(formName) {
                 this.$refs[formName].validate((valid) => {
                     if (valid) {

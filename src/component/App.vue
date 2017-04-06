@@ -4,7 +4,7 @@
     height:100%;
     padding-top:120px;
     #header{
-      position:absolute;
+      position:fixed;
       top:0;
       left:0;
       width: 100%;
@@ -13,6 +13,9 @@
     #router{
       height:100%;
       width:300px;
+      position:fixed;
+      left:0;
+      top:120px;
       float:left;
       background-color: #eef1f6;
       }
@@ -20,6 +23,7 @@
       float:left;
       width:70%;
       height:100%;
+      margin-left:300px;
       padding:30px 40px;
     }
     #footer{
