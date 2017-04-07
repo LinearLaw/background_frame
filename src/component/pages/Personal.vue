@@ -39,6 +39,8 @@
                         <el-checkbox label="AngularJS" name="type"></el-checkbox>
                         <el-checkbox label="React" name="type"></el-checkbox>
                         <el-checkbox label="jQuery" name="type"></el-checkbox>
+                        <el-checkbox label="BootStrap" name="type"></el-checkbox>
+                        <el-checkbox label="ElementUI" name="type"></el-checkbox>
                     </el-checkbox-group>
                 </el-form-item>
                 <el-form-item label="性别" prop="resource">
@@ -69,14 +71,14 @@
         data() {
             return {
                 ruleForm: {
-                    name: '',
-                    region: '',
-                    date1: '',
+                    name: 'LinearLaw',
+                    region: 'Shenzhen',
+                    date1: '2017-04-07',
                     date2: '',
-                    delivery: false,
-                    type: [],
+                    delivery: true,
+                    type: ["VueJS","AngularJS","jQuery","BootStrap"],
                     resource: '',
-                    desc: ''
+                    desc: 'To be or not to be.'
                 },
                 rules: {
                     name: [

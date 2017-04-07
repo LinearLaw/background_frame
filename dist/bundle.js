@@ -25643,7 +25643,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 },
                 yAxis: {},
                 series: [{
-                    name: 'Sales',
+                    name: 'Skills',
                     type: 'bar',
                     data: [5, 20, 36, 10, 10, 20]
                 }]
@@ -25725,7 +25725,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 },
                 yAxis: {},
                 series: [{
-                    name: "销量",
+                    name: "技术分布",
                     type: "line",
                     data: [5, 20, 36, 10, 10, 20]
                 }]
@@ -25749,7 +25749,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     data: ["jQuery", "Bootstrap", "Angular", "Vue", "React"]
                 },
                 series: [{
-                    name: '销量',
+                    name: '技术分布',
                     type: 'pie',
                     radius: '55%',
                     center: ['50%', '50%'],
@@ -25773,6 +25773,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+var _this = this;
+
 //
 //
 //
@@ -25858,6 +25860,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     formatter: function formatter(row, column) {
       return row.address;
+    },
+
+    /**
+     * @desc 过滤数据，待优化
+     */
+    dataFilter: function dataFilter(val) {
+      // console.log(val);
+      for (var i = 0; i < val.length; i++) {
+        for (var key in val[i]) {
+          if (key.indexOf(_this.input2) != -1) {
+            _this.list.push({ key: val[i][key] });
+          }
+        }
+      }
     }
   }
 });
@@ -26287,19 +26303,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             ruleForm: {
-                name: '',
-                region: '',
-                date1: '',
+                name: 'LinearLaw',
+                region: 'Shenzhen',
+                date1: '2017-04-07',
                 date2: '',
-                delivery: false,
-                type: [],
+                delivery: true,
+                type: ["VueJS", "AngularJS", "jQuery", "BootStrap"],
                 resource: '',
-                desc: ''
+                desc: 'To be or not to be.'
             },
             rules: {
                 name: [{ required: true, message: '请输入昵称', trigger: 'blur' }, { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }],
@@ -29272,6 +29290,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('el-checkbox', {
     attrs: {
       "label": "jQuery",
+      "name": "type"
+    }
+  }), _vm._v(" "), _c('el-checkbox', {
+    attrs: {
+      "label": "BootStrap",
+      "name": "type"
+    }
+  }), _vm._v(" "), _c('el-checkbox', {
+    attrs: {
+      "label": "ElementUI",
       "name": "type"
     }
   })], 1)], 1), _vm._v(" "), _c('el-form-item', {

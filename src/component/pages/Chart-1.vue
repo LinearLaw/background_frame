@@ -56,7 +56,7 @@
                 },
                 yAxis: {},
                 series: [{
-                    name: 'Sales',
+                    name: 'Skills',
                     type: 'bar',
                     data: [5, 20, 36, 10, 10, 20]
                 }]

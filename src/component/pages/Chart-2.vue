@@ -46,7 +46,7 @@
                 yAxis:{},
                 series: [
                     {
-                        name: "销量",
+                        name: "技术分布",
                         type: "line",
                         data: [5, 20, 36, 10, 10, 20]
                     }
@@ -72,7 +72,7 @@
                 },
                 series : [
                     {
-                        name: '销量',
+                        name: '技术分布',
                         type: 'pie',
                         radius : '55%',
                         center: ['50%', '50%'],
