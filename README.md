@@ -1,4 +1,4 @@
-# background_frame
+﻿# background_frame
     vue搭建的页面框架
 ##  用法
     npm install         安装项目依赖
@@ -7,6 +7,8 @@
     webpack-dev-server  开启服务进行开发，端口为localhost:8080
     或者
     npm run dev         端口为localhost:8086
+
+	tips:注意，webpack-dev-server需要另外全局安装才能生效。
 
 ##  项目结构
     |-dist              生成的静态页面文件夹
