@@ -34,7 +34,6 @@
 </style>
 <template>
   <div id="index">
-
     <!--顶部导航-->
     <header id="header">
       <myheader></myheader>
@@ -49,11 +48,6 @@
     <section id="routerView">
       <router-view></router-view>
     </section>
-
-     <!-- 这里的footer不一定会用到 
-    <footer id="footer">
-      <myfooter></myfooter>
-    </footer>-->
   </div>
 </template>
 
