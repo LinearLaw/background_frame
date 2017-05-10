@@ -1,14 +1,21 @@
-﻿# background_frame
+# background_frame
     vue搭建的页面框架
-##  用法
+
+# 安装
     npm install         安装项目依赖
-    webpack             打包
+	webpack             打包
+## 全局安装webpack
+    npm i -g webpack
 
-    webpack-dev-server  开启服务进行开发，端口为localhost:8080
-    或者
-    npm run dev         端口为localhost:8086
+## 全局安装webpack-dev-server
+    npm i -g webpack-dev-server
 
-	tips:注意，webpack-dev-server需要另外全局安装才能生效。
+# 开启服务
+    	webpack-dev-server
+    		默认地址为localhost:8080
+	或
+    	npm run dev        
+			端口为localhost:8086
 
 ##  项目结构
     |-dist              生成的静态页面文件夹

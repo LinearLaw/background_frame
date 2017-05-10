@@ -35,7 +35,7 @@
 <template>
   <div id="index">
     <!--顶部导航-->
-    <header id="header">
+    <header id="header"
       <myheader></myheader>
     </header>
 
