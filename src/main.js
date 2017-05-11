@@ -6,6 +6,8 @@
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Vuex from "vuex"
+import store from "./store.js"
 import App from './component/App.vue'
 /**
  * @desc 引入element-ui
@@ -65,6 +67,7 @@ const router = new VueRouter({
  */
 new Vue({
   el: "#app",
+  store:store,
   router: router,
   render: h => h(App)
 })
