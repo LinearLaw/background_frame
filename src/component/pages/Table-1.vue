@@ -218,6 +218,17 @@
         this.currentPage = val;
         console.log(`当前页: ${val}`);
       }
+    },
+    /**
+     * @desc 在页面加载完成后，将state中的数据取出，加入到页面data中
+     * @return {[type]} [description]
+     */
+    mounted:function(){
+      var that = this.tableData3;
+      this.$store.state.msg.forEach(function(ele,index){
+       
+        that.push(ele);
+      })
     }
   }
 </script>
