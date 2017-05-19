@@ -15,7 +15,7 @@
     		默认地址为localhost:8080
 	或
     	npm run dev        
-			端口为localhost:8086
+			默认端口为localhost:8086
 
 ##  项目结构
     |-dist              生成的静态页面文件夹
@@ -32,9 +32,10 @@
     |---main.js         js入口文件
 
 ##  说明
-    这是一个使用vue2 + vue-router + element-ui构建的单页面应用。
+    这是一个使用vue2 + vue-router + vuex + element-ui构建的单页面应用。
     功能：信息管理系统。
     用到的模块：
+        vuex                  vue状态管理
         vue-router            vue路由组件
         element-ui            vue的一个ui框架  
         vue-echarts-v3        echarts插件的vue版，用于绘制图表
