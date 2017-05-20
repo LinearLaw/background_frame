@@ -10,6 +10,8 @@
 </style>
 <script>
   export default{
-    
+    /**
+     * @desc footer.vue在页面中没有实际调用，仅占位用
+     */
   }
 </script>

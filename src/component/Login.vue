@@ -22,6 +22,9 @@
     export default {
         data: function(){
             return {
+                /**
+                 * @desc login页面没做跳转。。。
+                 */
                 ruleForm: {
                     username: '',
                     password: ''

@@ -91,6 +91,9 @@
 <script>
     export default {
         data() {
+            /**
+             * 主要显示个人信息
+             */
             return {
                 dialogVisible: false,
                 avatar_src:"./src/images/avatar.jpg",
