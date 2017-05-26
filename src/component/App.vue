@@ -27,8 +27,13 @@
       padding:30px 40px;
     }
     #footer{
+      position:fixed;
+      bottom:0;
+      left:0;
       float:left;
-      width:100%
+      width:100%;
+      height:30px;
+      background-color: #cdd2da;
     }
   }
 </style>
@@ -48,6 +53,11 @@
     <section id="routerView">
       <router-view></router-view>
     </section>
+    
+    <!-- 底部部分，用来显示当前状态 -->
+    <footer id="footer">
+      <myfooter></myfooter>
+    </footer>
   </div>
 </template>
 
