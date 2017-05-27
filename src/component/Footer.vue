@@ -19,16 +19,14 @@
 </style>
 <script>
   export default{
-    /**
-     * @desc footer.vue在页面中没有实际调用，仅占位用
-     */
     data:function(){
       return{
         nowTime:""
       }
     },
     mounted:function(){
-      this.nowTime = new Date();
+      var tempTime = new Date();
+      this.nowTime = tempTime.toLocaleString();
     }
   }
 </script>
