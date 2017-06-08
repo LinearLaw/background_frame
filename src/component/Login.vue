@@ -4,10 +4,10 @@
         <div class="ms-login">
             <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" class="demo-ruleForm">
                 <el-form-item prop="username">
-                    <el-input v-model="ruleForm.username" placeholder="username"></el-input>
+                    <el-input v-model="ruleForm.username" placeholder="用户名"></el-input>
                 </el-form-item>
                 <el-form-item prop="password">
-                    <el-input type="password" placeholder="password" v-model="ruleForm.password" @keyup.enter.native="submitForm('ruleForm')"></el-input>
+                    <el-input type="password" placeholder="密码" v-model="ruleForm.password" @keyup.enter.native="submitForm('ruleForm')"></el-input>
                 </el-form-item>
                 <div class="login-btn">
                     <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+    import "../canvas-nest.min.js"
     export default {
         data: function(){
             return {
@@ -30,6 +31,7 @@
                     password: ''
                 },
                 rules: {
+                    
                     username: [
                         { required: true, message: '请输入用户名', trigger: 'blur' }
                     ],
@@ -44,12 +46,17 @@
                 const self = this;
                 self.$refs[formName].validate((valid) => {
                     console.log(valid);
+                    if(self.ruleForm.username != "admin" || self.ruleForm.password != "admin"){
+                        valid = false;
+                        alert('用户名或密码错误！请重新确认！');
+                        return false;
+                    }
                     if (valid) {
                         localStorage.setItem('ms_username',self.ruleForm.username);
                         location.href = "/#/home";
                         // self.$router.push('/readme');
                     } else {
-                        console.log('error submit!!');
+                        // alert('用户名或密码错误！请重新确认！');
                         return false;
                     }
                 });
@@ -71,14 +78,14 @@
         margin-top: -230px;
         text-align: center;
         font-size:30px;
-        color: #fff;
+        color: #000;
 
     }
     .ms-login{
         position: absolute;
         left:50%;
-        top:50%;
-        width:300px;
+        top:40%;
+        width:400px;
         height:160px;
         margin:-150px 0 0 -190px;
         padding:40px;
