@@ -99,6 +99,7 @@
                 cancelButtonText: '取消',
                 type: 'warning'
                 }).then(() => {
+                    localStorage.clear('ms_username');
                     location.href = "/#/login";
                 }).catch(() => {
                     this.$message({

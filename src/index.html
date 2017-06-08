@@ -15,7 +15,9 @@
   
   </div>
   <script>
-    location.href="/#/login"
+    if(!localStorage.getItem('ms_username')){
+      location.href="/#/login"
+    }
   </script>
 </body>
 </html>
