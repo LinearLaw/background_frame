@@ -11,16 +11,8 @@
             </div>
         </section>
         <section id="header_right">
-            <div class="personal"><router-link to="/personal" >个人中心</router-link></div>
-            <el-button type="text" @click="dialogVisible = true" class="logout">退出</el-button>
-
-            <el-dialog title="提示" v-model="dialogVisible" size="tiny">
-                <span>是否退出登录？</span>
-                <span slot="footer" class="dialog-footer">
-                    <el-button @click="dialogVisible = false">取 消</el-button>
-                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-                </span>
-            </el-dialog>
+            <div class="personal"><router-link :to="{name: 'personal'}" >个人中心</router-link></div>
+            <el-button type="text" @click="logout">退出</el-button>
         </section>
     </div>
 </template>
@@ -99,6 +91,22 @@
                 avatar_src:"./src/images/avatar.jpg",
                 username:'LinearLaw'
             };
+        },
+        methods:{
+            logout() {
+                this.$confirm('是否退出?', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'warning'
+                }).then(() => {
+                    location.href = "/#/login";
+                }).catch(() => {
+                    this.$message({
+                        type: 'info',
+                        message: '已取消退出'
+                    });          
+                });
+            }
         }
     };
 

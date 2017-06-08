@@ -19,6 +19,7 @@ import "./less/common.less"
 /**
  * @desc 引入需要配置路由的组件
  */
+import home from './component/Home.vue'
 import main from './component/pages/Main.vue'
 import login from './component/Login.vue'
 import chart_1 from './component/pages/Chart-1.vue';
@@ -40,28 +41,38 @@ Vue.use(VueQuillEditor)
 
 const router = new VueRouter({
   routes: [
-    { path: '/', component: main },
     { path: '/login', component: login },
-    { path: '/chart_1', component: chart_1 },
-    { path: '/chart_2', component: chart_2 },
-    { path: '/table_1', component: table_1 },
-    { path: '/table_2', component: table_2 },
-    { path: '/setting', component: setting },
-    { path: '/document', component: docu ,
-        children:[
-          { path: 'adddoc', component: adddoc }
-        ]
+    {
+      path: '/home', component: home,
+      children: [
+        { path: '', component: main},
+        { path: 'chart_1', name: 'chart_1', component: chart_1 },
+        { path: 'chart_2', name: 'chart_2', component: chart_2 },
+        { path: 'table_1', name: 'table_1', component: table_1 },
+        { path: 'table_2', name: 'table_2', component: table_2 },
+        { path: 'setting', name: 'setting', component: setting },
+        {
+          path: 'document', name: 'document', component: docu,
+          children: [
+            { path: 'adddoc', name: 'adddoc', component: adddoc }
+          ]
+        },
+        // { path: '/document/adddoc', component: adddoc },
+        { path: 'contact', name: 'contact', component: contact },
+        { path: 'personal', name: 'personal', component: personal },
+        { path: 'avatar', name: 'avatar', component: avatar },
+
+
+
+      ]
     },
-    // { path: '/document/adddoc', component: adddoc },
-    { path: '/contact', component: contact },
-    { path: '/personal', component: personal },
-    { path: '/avatar', component: avatar },
+
   ]
 })
 /**
  * @desc 注册element-ui
  */
-  Vue.use(ElementUI)
+Vue.use(ElementUI)
 /**
  * @desc 创建实例化vue对象
  */

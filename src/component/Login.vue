@@ -46,7 +46,7 @@
                     console.log(valid);
                     if (valid) {
                         localStorage.setItem('ms_username',self.ruleForm.username);
-                        
+                        location.href = "/#/home";
                         // self.$router.push('/readme');
                     } else {
                         console.log('error submit!!');

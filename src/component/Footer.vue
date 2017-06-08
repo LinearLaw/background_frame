@@ -15,7 +15,6 @@
         font-size:12px;
       }
     }
-    
 </style>
 <script>
   export default{
