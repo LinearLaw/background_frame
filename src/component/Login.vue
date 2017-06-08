@@ -42,7 +42,6 @@
             submitForm(formName) {
                 const self = this;
                 self.$refs[formName].validate((valid) => {
-                    console.log(valid);
                     if(self.ruleForm.username != "admin" || self.ruleForm.password != "admin"){
                         valid = false;
                         alert('用户名或密码错误！请重新确认！');
