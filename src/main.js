@@ -7,7 +7,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './component/App.vue'
-/**
+/**101010101010
  * @desc 引入element-ui
  */
 import ElementUI from 'element-ui'
