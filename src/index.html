@@ -14,10 +14,10 @@
   <div id="app">
   
   </div>
+  <script>
+    if(!localStorage.getItem('ms_username')){
+      location.href="/#/login"
+    }
+  </script>
 </body>
-<script>
-  if(!localStorage.getItem('ms_username')){
-    location.href="/#/login"
-  }
-</script>
 </html>

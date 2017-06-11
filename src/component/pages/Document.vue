@@ -2,13 +2,13 @@
     <div class="add_doc">
         <header class="documentInfo">
             <el-breadcrumb separator="/">
-                <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                <el-breadcrumb-item :to="{ path: '/document'}">备忘录</el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: '/home/document'}">备忘录</el-breadcrumb-item>
             </el-breadcrumb>
         </header>
         <section class="add_doc_btn">
             <el-button icon="el-icon-plus">
-                <router-link to='/document/adddoc'>添加备忘</router-link>
+                <router-link to='/home/document/adddoc'>添加备忘</router-link>
             </el-button>
         </section>
         <section class="doc_content">

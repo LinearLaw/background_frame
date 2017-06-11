@@ -1,12 +1,21 @@
 # background_frame
     vue搭建的页面框架
-##  用法
-    npm install         安装项目依赖
-    webpack             打包
 
-    webpack-dev-server  开启服务进行开发，端口为localhost:8080
-    或者
-    npm run dev         端口为localhost:8086
+# 安装
+    npm install         安装项目依赖
+	webpack             打包
+## 全局安装webpack
+    npm i -g webpack
+
+## 全局安装webpack-dev-server
+    npm i -g webpack-dev-server
+
+# 开启服务
+    	webpack-dev-server
+    		默认地址为localhost:8080
+	或
+    	npm run dev        
+			默认端口为localhost:8086
 
 ##  项目结构
     |-dist              生成的静态页面文件夹
@@ -23,9 +32,10 @@
     |---main.js         js入口文件
 
 ##  说明
-    这是一个使用vue2 + vue-router + element-ui构建的单页面应用。
+    这是一个使用vue2 + vue-router + vuex + element-ui构建的单页面应用。
     功能：信息管理系统。
     用到的模块：
+        vuex                  vue状态管理
         vue-router            vue路由组件
         element-ui            vue的一个ui框架  
         vue-echarts-v3        echarts插件的vue版，用于绘制图表

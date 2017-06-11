@@ -83,7 +83,7 @@
                 rules: {
                     name: [
                         { required: true, message: '请输入昵称', trigger: 'blur' },
-                        { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+                        { min: 3, max: 12, message: '长度在 3 到 12 个字符', trigger: 'blur' }
                     ],
                     region: [
                         { required: true, message: '请选择地区', trigger: 'change' }
@@ -111,8 +111,10 @@
              * @desc 表单提交时进行验证，验证通过则提交，不通过则提示
              */
             submitForm(formName) {
+                var that = this.ruleForm
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
+                        formName = that;
                         alert('submit!');
                     } else {
                         console.log('error submit!!');

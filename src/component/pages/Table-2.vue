@@ -9,6 +9,9 @@
         </div>
         <div class="content">
             <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+                <el-form-item label="ID" prop="id">
+                    <el-input v-model="ruleForm.id"></el-input>
+                </el-form-item>
                 <el-form-item label="姓名" prop="name">
                     <el-input v-model="ruleForm.name"></el-input>
                 </el-form-item>
@@ -17,6 +20,9 @@
                         <el-option label="地区一" value="shanghai"></el-option>
                         <el-option label="地区二" value="beijing"></el-option>
                     </el-select>
+                </el-form-item>
+                 <el-form-item label="详细地址" prop="address">
+                    <el-input v-model="ruleForm.address"></el-input>
                 </el-form-item>
                 <el-form-item label="入职时间" required>
                     <el-col :span="11">
@@ -71,8 +77,10 @@
         data() {
             return {
                 ruleForm: {
+                    id:'',
                     name: '',
                     region: '',
+                    address:'',
                     date1: '',
                     date2: '',
                     delivery: false,
@@ -81,13 +89,20 @@
                     desc: ''
                 },
                 rules: {
+                    id: [
+                        { required: true, message: '请输入ID号', trigger: 'blur' },
+                        { min: 7, max: 20, message: '长度在 7 到 20 个字符', trigger: 'blur' }
+                    ],
                     name: [
                         { required: true, message: '请输入姓名', trigger: 'blur' },
                         { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
                     ],
                     region: [
-                        { required: true, message: '请选择地区', trigger: 'change' }
+                        { required: false, message: '请选择地区', trigger: 'change' }
                     ],
+                    address:[{
+                        required: true, message: '请填写详细地址', trigger: 'change'
+                    }],
                     date1: [
                         { type: 'date', required: true, message: '请选择日期', trigger: 'change' }
                     ],
@@ -116,7 +131,8 @@
                         alert('请完善表单再进行提交！');
                         return false;                        
                     } else {
-                        console.log(formName);
+                        formName.date = formName.date1;
+                        this.$store.dispatch("saveMsg",formName);
                         alert('提交成功！');
                     }
                 });
