@@ -61,12 +61,8 @@ const router = new VueRouter({
         { path: 'contact', name: 'contact', component: contact },
         { path: 'personal', name: 'personal', component: personal },
         { path: 'avatar', name: 'avatar', component: avatar },
-
-
-
       ]
     },
-
   ]
 })
 /**
