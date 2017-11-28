@@ -8,10 +8,10 @@
             </el-breadcrumb>
         </div>
         <div class="echarts">
-            <IEcharts :option="line" ></IEcharts>
+            <!-- <IEcharts :option="line" ></IEcharts> -->
         </div>
         <div class="echarts">
-            <IEcharts :option="pie" ></IEcharts>
+            <!-- <IEcharts :option="pie" ></IEcharts> -->
         </div>
     </div>
 </template>
@@ -26,11 +26,11 @@
     }
 </style>
 <script>
-    import IEcharts from 'vue-echarts-v3';
+    // import IEcharts from 'vue-echarts-v3';
     export default{
-        components: {
-            IEcharts
-        },
+        // components: {
+        //     IEcharts
+        // },
         data: () => ({
             /**
              * @desc line表示折线图，在这里配置折线图的数据

@@ -89,10 +89,60 @@
             return {
                 dialogVisible: false,
                 avatar_src:"./src/images/avatar.jpg",
-                username:'LinearLaw'
+                username:'LinearLaw',
+
+                shareTitle:"",
+                shareContent:"",
+                pageHref:location.href,
+                shareImgs:""
+
             };
         },
+        created(){
+            this.getTitle();
+            console.log(new Date().getTime());
+        },
+        metaInfo(){
+            return{
+                title:this.shareTitle,
+                meta:[{ charset: 'utf-8' },
+                      {"property":"og:title",content:this.shareTitle},
+                      {"property":"og:type",content:"website"},
+                      {"property":"og:description",content:this.shareContent},
+                      {"property":"og:url",content:this.pageHref},
+                      {"property":"og:image",content:this.shareImgs},
+                      {"property":"og:image:width",content:640},
+                      {"property":"og:image:height",content:360},
+                      {"property":"og:image:type",content:"image/jpeg"},
+                      {"property":"og:site_name",content:"Backend"}]
+            }
+        },
         methods:{
+            getTitle:async function(){
+                var that = this;
+                // function resolveAfter2Seconds(x) { 
+                //   return new Promise(resolve => {
+                    
+                //   });
+                // }
+
+                async function f1(x) {
+                  var x = await setTimeout((x)=>{
+                        that.shareTitle="啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊",
+                        that.shareContent="阿坝擦擦擦",
+                        that.pageHref=location.href,
+                        that.shareImgs=""
+                    }, 2000);
+                  alert(x); // 10
+                }
+                f1("来帮你宁宁四");
+                alert(11);
+                // var url = "http://e47f09e6.ngrok.io/get";
+                // await this.$http.get(url,{emulateJSON:true}).then(await function(res){
+                //     console.log(res);
+                //     console.log(new Date().getTime());
+                // },(err)=>{console.log(err);})
+            },
             logout() {
                 this.$confirm('是否退出?', '提示', {
                 confirmButtonText: '确定',

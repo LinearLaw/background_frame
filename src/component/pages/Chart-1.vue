@@ -10,7 +10,7 @@
         </header>
         <section>
             <div class="echarts">
-                <IEcharts :option="bar" @click="onClick"></IEcharts>
+                <!-- <IEcharts :option="bar" @click="onClick"></IEcharts> -->
                 <button @click="doRandom">Random</button>
             </div>
         </section>
@@ -35,12 +35,12 @@
     }
 </style>
 <script>
-    import IEcharts from 'vue-echarts-v3';
+    // import IEcharts from 'vue-echarts-v3';
     export default{
         name: 'view',
-        components: {
-            IEcharts
-        },
+        // components: {
+        //     IEcharts
+        // },
         props: {
 
         },

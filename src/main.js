@@ -8,6 +8,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Vuex from "vuex"
 import store from "./store.js"
+import VueResource from 'vue-resource'
+import Meta from 'vue-meta'
 import App from './component/App.vue'
 /**101010101010
  * @desc 引入element-ui
@@ -38,6 +40,12 @@ import avatar from './component/pages/Avatar.vue';
  */
 Vue.use(VueRouter)
 Vue.use(VueQuillEditor)
+Vue.use(VueResource);
+Vue.use(Meta);
+/**
+ * @desc 注册element-ui
+ */
+Vue.use(ElementUI)
 
 const router = new VueRouter({
   routes: [
@@ -65,10 +73,7 @@ const router = new VueRouter({
     },
   ]
 })
-/**
- * @desc 注册element-ui
- */
-Vue.use(ElementUI)
+
 /**
  * @desc 创建实例化vue对象
  */
