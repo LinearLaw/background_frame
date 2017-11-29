@@ -9,10 +9,17 @@
                 <p class="name">{{username}}</p>
                 <p>Welcome!</p>
             </div>
+            
         </section>
         <section id="header_right">
             <div class="personal"><router-link :to="{name: 'personal'}" >个人中心</router-link></div>
             <el-button type="text" @click="logout">退出</el-button>
+            <a href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href)) ))" target="_blank" title="Facebook" class="amp-social-share" @click="GA_share('Facebook')">
+                          <span class="btn-fb">facebook</span>
+            </a>
+            <a href="javascript: void(window.open('https://plus.google.com/share?url='.concat(encodeURIComponent(location.href))))" target="_blank" title="Google+" class="amp-social-share" @click="GA_share('Google')">
+                <span class="btn-gplus">google plus</span>
+            </a>
         </section>
     </div>
 </template>
@@ -77,6 +84,9 @@
                 // color:#1f2d3d;
                 color:#a9b0c2;
             }
+            a{
+                display:block;
+            }
         }
     }
 </style>
@@ -99,8 +109,12 @@
             };
         },
         created(){
-            this.getTitle();
+            // this.getTitle();
             console.log(new Date().getTime());
+            this.shareTitle="啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊",
+            this.shareContent="阿坝擦擦擦",
+            this.pageHref=location.href,
+            this.shareImgs="http://img.zcool.cn/community/0117e2571b8b246ac72538120dd8a4.jpg"
         },
         metaInfo(){
             return{
