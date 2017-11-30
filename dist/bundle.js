@@ -37102,6 +37102,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "login-wrap"
   }, [_c('div', {
+    staticClass: "ms-title"
+  }, [_vm._v("后台管理系统")]), _vm._v(" "), _c('div', {
     staticClass: "ms-login"
   }, [_c('el-form', {
     ref: "ruleForm",
