@@ -14,7 +14,7 @@
                 </div>
                 <p style="font-size:12px;line-height:30px;color:#999;">Tips : 用户名和密码都是admin。</p>
             </el-form>
-            <Location @locationInput="locationInput"></Location>
+            <!-- <Location @locationInput="locationInput"></Location> -->
         </div>
     </div>
 </template>

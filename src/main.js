@@ -54,7 +54,7 @@ Vue.prototype.CONFIG = config
 
 const router = new VueRouter({
   routes: [
-    { path: '/login', component: login },
+    { path: '/login',name:'login', component: login },
     {
       path: '/home', component: home,
       children: [

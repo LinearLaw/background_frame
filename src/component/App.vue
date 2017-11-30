@@ -18,6 +18,15 @@
    * 在这里可以定义非路由组件，
    * 也可以写路由的标签入口和配置组件显示位置
    */
-
+   export default{
+    data(){
+      return{}
+    },
+    mounted(){
+      if(!localStorage.getItem('ms_username')){
+        this.$router.push({"name":"login"});
+      }
+    }
+   }
 
 </script>
