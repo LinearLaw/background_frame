@@ -1,6 +1,6 @@
 <template>
     <div class="login-wrap">
-        <div class="ms-title">后台管理系统</div>
+        <!-- <div class="ms-title">后台管理系统</div> -->
         <div class="ms-login">
             <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" class="demo-ruleForm">
                 <el-form-item prop="username">
@@ -14,13 +14,16 @@
                 </div>
                 <p style="font-size:12px;line-height:30px;color:#999;">Tips : 用户名和密码都是admin。</p>
             </el-form>
+            <Location @locationInput="locationInput"></Location>
         </div>
     </div>
 </template>
 
 <script>
+    import Location from "./plugin_component/location.vue"
     import "../canvas-nest.min.js"
     export default {
+        components:{Location},
         data: function(){
             return {
                 ruleForm: {
@@ -56,6 +59,9 @@
                         return false;
                     }
                 });
+            },
+            locationInput(location){
+                console.log("父级",location);
             }
         }
     }

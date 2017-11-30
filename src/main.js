@@ -35,6 +35,9 @@ import contact from './component/pages/Contact.vue';
 import personal from './component/pages/Personal.vue';
 import avatar from './component/pages/Avatar.vue';
 
+import {config} from './js/config.vue'
+require("./less/style.css")
+require("./less/font/style.css")
 /**
  * @desc 注册路由、配置路由规则
  */
@@ -46,6 +49,8 @@ Vue.use(Meta);
  * @desc 注册element-ui
  */
 Vue.use(ElementUI)
+
+Vue.prototype.CONFIG = config
 
 const router = new VueRouter({
   routes: [
