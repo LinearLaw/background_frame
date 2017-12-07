@@ -172,6 +172,58 @@ export default{
     })
   },
   methods:{
+    /**
+     * @description 传入一个值，将内容选中和渲染。
+     */
+    renderGetData(locationOrigin){
+      var that = this;
+      this.locationStr = "All HongKong + " + locationOrigin.count;
+      if(locationOrigin.location){
+        var locationFirst = locationOrigin.location[0];
+        if(locationFirst.subset.length>0){
+          $.each(locationFirst.subset,function(index,value){
+            var middleIndex;
+            $.each(that.firstLocationName,function(middlekey,middleValue){
+              if(middleValue == value.key){
+                middleIndex = middlekey
+              }
+            })
+            if(middleIndex>=0){
+              for(var i = 0;i < value.subset.length;i++){
+                var smallIndex;
+                if(that.location.locationAllDetail[middleIndex]){
+                  $.each(that.location.locationAllDetail[middleIndex],function(innerIndex,innerValue){
+                    $.each(innerValue,function(key,item){
+                      if(value.subset[i].key == key){
+                        smallIndex = innerIndex;
+                      }
+                    })
+                  })
+                  if(smallIndex>=0){
+                    that.isTwiceSelect[middleIndex][smallIndex] = true;
+                  }
+                }
+              }
+              if(value.subset.length == that.location.locationAllDetail[middleIndex].length){
+                that.isFirstSelect[middleIndex] = true;
+              }
+            }
+          })
+          var tempIsAll = true;
+          $.each(that.isFirstSelect,function(index,value){
+            if(value == false){
+              tempIsAll = false;
+            }
+          })
+          if(tempIsAll == true){
+            that.isZeroSelect = true;
+          }else{
+            that.isZeroSelect = false;
+          }
+        }
+      }
+      this.calculateLocationStr();
+    },
     refreshData:function(){
       var that = this;
 

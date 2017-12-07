@@ -14,7 +14,8 @@
                 </div>
                 <p style="font-size:12px;line-height:30px;color:#999;">Tips : 用户名和密码都是admin。</p>
             </el-form>
-            <!-- <Location @locationInput="locationInput"></Location> -->
+            <!-- <el-button type="primary" @click="updateLocation">Update</el-button> -->
+            <!-- <Location @locationInput="locationInput" ref="locationConponent"></Location> -->
         </div>
     </div>
 </template>
@@ -59,6 +60,75 @@
                         return false;
                     }
                 });
+            },
+            updateLocation(){
+                var location = {
+                    "count": 12,
+                    "location": [
+                        {
+                            "subset": [
+                                {
+                                    "subset": [
+                                        {
+                                            "key": "location_hk_sheungwan",
+                                            "value": "上環"
+                                        },
+                                        {
+                                            "key": "location_hk_central",
+                                            "value": "中環"
+                                        },
+                                        {
+                                            "key": "location_hk_admiralty",
+                                            "value": "金鐘"
+                                        },
+                                        {
+                                            "key": "location_hk_wanchai",
+                                            "value": "灣仔"
+                                        },
+                                        {
+                                            "key": "location_hk_causewaybay",
+                                            "value": "銅鑼灣"
+                                        },
+                                        {
+                                            "key": "location_hk_northpoint",
+                                            "value": "北角"
+                                        },
+                                        {
+                                            "key": "location_hk_taikoo",
+                                            "value": "太古"
+                                        },
+                                        {
+                                            "key": "location_hk_quarrybay",
+                                            "value": "鰂魚涌"
+                                        },
+                                        {
+                                            "key": "location_hk_shaukeiwan",
+                                            "value": "筲箕灣"
+                                        },
+                                        {
+                                            "key": "location_hk_chaiwan",
+                                            "value": "柴灣"
+                                        },
+                                        {
+                                            "key": "location_hk_aberdeen",
+                                            "value": "香港仔"
+                                        },
+                                        {
+                                            "key": "location_hk_apleichau",
+                                            "value": "鴨脷洲"
+                                        }
+                                    ],
+                                    "key": "location_hk_all",
+                                    "value": "香港"
+                                }
+                            ],
+                            "key": "location_all",
+                            "value": "全部地區"
+                        }
+                    ]
+                }
+                console.log(this.$refs.locationConponent);
+                this.$refs.locationConponent.renderGetData(location);
             },
             locationInput(location){
                 console.log("父级",location);
