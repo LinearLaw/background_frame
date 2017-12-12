@@ -15,13 +15,20 @@
                 <p style="font-size:12px;line-height:30px;color:#999;">Tips : 用户名和密码都是admin。</p>
             </el-form>
             <!-- <el-button type="primary" @click="updateLocation">Update</el-button> -->
+
+            <!---1、location module-->
             <!-- <Location @locationInput="locationInput" ref="locationConponent"></Location> -->
+
+            <!---2、industry module-->
+            <!-- <Industry :industryError="errorShow.industryError" @industryInput="industryInput" ref="indcomponent"></Industry> -->
         </div>
     </div>
 </template>
 
 <script>
     import Location from "./plugin_component/location.vue"
+    import Industry from "./plugin_component/industry.vue"
+    import {mapState,mapMutations} from "vuex"
     import "../canvas-nest.min.js"
     export default {
         components:{Location},
@@ -39,10 +46,20 @@
                     password: [
                         { required: true, message: '请输入密码', trigger: 'blur' }
                     ]
-                }
+                },
+                errorShow:{
+                    industryError:{
+                      content:this.$t('candidate_profile.notice_msg.can_criteria_msg_selectind'),
+                      controler:false
+                    }
+                },
             }
         },
+        computed:{
+            ...mapState(["candidatePop"])
+        },
         methods: {
+            ...mapMutations(["showCriteriaIndustryDropdown","hideCriteriaIndustryDropdown"]),
             submitForm(formName) {
                 const self = this;
                 self.$refs[formName].validate((valid) => {
@@ -132,7 +149,14 @@
             },
             locationInput(location){
                 console.log("父级",location);
-            }
+            }，
+            renderIndustry(){
+                this.$refs.indcomponent.renderOuterData(industry,sector);
+            },
+            industryInput(obj){
+              this.thisCriteria.sector = obj.sector;
+              this.thisCriteria.industry = obj.industry;
+            },
         }
     }
 </script>

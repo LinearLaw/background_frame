@@ -7,7 +7,10 @@ import Vuex from "vuex"
 Vue.use(Vuex);
 
 const state={
-    msg:[]
+    msg:[]，
+    candidatePop:{
+        showCandidateCriteriaIndustry:false
+    },
 }
 /**
  * @desc 外界要传值给store，则调用actions里的方法
@@ -30,6 +33,15 @@ const mutations={
     },
     initMsg(){
         state.msg = [];
+    }，
+    /**
+     * @desc 控制industry
+     */
+    showCriteriaIndustryDropdown(state){
+        state.candidatePop.showCandidateCriteriaIndustry = true;
+    },
+    hideCriteriaIndustryDropdown(state){
+        state.candidatePop.showCandidateCriteriaIndustry = false;     
     }
 }
 /**
