@@ -232,21 +232,31 @@
                 var str = "";
                 var industryArr = [];
                 var sectorArr = [];
+                var multiIndustry = [];
                 that.configIndustry.map(function(value,index){
                     if(that.displayIndustry[index] == true){
                         str = str + value.actualValue + ", ";
                         indStr = indStr + value.actualValue + ", ";
                     }
+                    var tempIndustry = {}
                     if(value.actualSelect == true){
                         industryArr.push(value.actualKey);
+                        tempSearchItem ={
+                            industry:value.actualKey,
+                            sector:[]
+                        };
+                        that.configSector[index].map(function(secVal,secIndex){
+                            if(secVal.sectorSelect == true){
+                                str = str + secVal.sectorValue + ", ";
+                                secStr = secStr + secVal.sectorValue + ", ";
+                                sectorArr.push(secVal.sectorKey);
+                                tempSearchItem.sector.push(secVal.sectorKey);
+                            }
+                        })
                     }
-                    that.configSector[index].map(function(secVal,secIndex){
-                        if(secVal.sectorSelect == true){
-                            str = str + secVal.sectorValue + ", ";
-                            secStr = secStr + secVal.sectorValue + ", ";
-                            sectorArr.push(secVal.sectorKey);
-                        }
-                    })
+                    if(tempSearchItem.industry){
+                        multiIndustry.push(tempSearchItem);
+                    }
                 })
                 if(industryArr.length>0){
                     indStr = indStr.slice(0,-2);
@@ -268,9 +278,17 @@
                 this.displayStr = str;
                 this.sectorList = sectorArr;
                 this.industryList = industryArr;
+                /**
+                 * @data structure industryArr:[ 'industry_key1','industry_key2',... ]
+                 *       sectorArr:[ 'sector_key1','sector_key2',... ]
+                 *       multiIndustry:
+                 *           [ { industry:'industry_key',sector:[ 'sector_key1','sector_key2' ] },... ]
+                 *       
+                 */
                 this.$emit("industryInput",{
                     industry:industryArr,
                     sector:sectorArr
+                    multiIndustry:multiIndustry
                 });
             }
         }
