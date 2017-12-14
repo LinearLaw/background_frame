@@ -149,7 +149,7 @@
             },
             locationInput(location){
                 console.log("父级",location);
-            }，
+            },
             renderIndustry(){
                 this.$refs.indcomponent.renderOuterData(industry,sector);
             },

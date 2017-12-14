@@ -7,7 +7,7 @@ import Vuex from "vuex"
 Vue.use(Vuex);
 
 const state={
-    msg:[]，
+    msg:[],
     candidatePop:{
         showCandidateCriteriaIndustry:false
     },
@@ -33,7 +33,7 @@ const mutations={
     },
     initMsg(){
         state.msg = [];
-    }，
+    },
     /**
      * @desc 控制industry
      */

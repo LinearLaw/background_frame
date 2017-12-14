@@ -287,7 +287,7 @@
                  */
                 this.$emit("industryInput",{
                     industry:industryArr,
-                    sector:sectorArr
+                    sector:sectorArr,
                     multiIndustry:multiIndustry
                 });
             }
