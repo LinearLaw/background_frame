@@ -245,14 +245,20 @@
                             industry:value.actualKey,
                             sector:[]
                         };
+                        var tempSector = [];
+                        var tempStr = "";
                         that.configSector[index].map(function(secVal,secIndex){
                             if(secVal.sectorSelect == true){
-                                str = str + secVal.sectorValue + ", ";
+                                tempStr = tempStr + secVal.sectorValue + ", ";
                                 secStr = secStr + secVal.sectorValue + ", ";
-                                sectorArr.push(secVal.sectorKey);
+                                tempSector.push(secVal.sectorKey);
                                 tempSearchItem.sector.push(secVal.sectorKey);
                             }
                         })
+                        sectorArr.push(...tempSector);
+                        if(tempSector.length != that.configSector[index].length){
+                            str = str + tempStr;
+                        }
                     }
                     if(tempSearchItem.industry){
                         multiIndustry.push(tempSearchItem);
