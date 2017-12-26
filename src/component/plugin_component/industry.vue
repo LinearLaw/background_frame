@@ -60,7 +60,7 @@
         },
         created(){
             var that = this;
-            var tempConfig = JSON.parse(localStorage.config).result;
+            var tempConfig = this.CONFIG.result;
             this.hideCriteriaIndustryDropdown();
             this.config = tempConfig;
             this.configSector = [];

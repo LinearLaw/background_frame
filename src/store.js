@@ -9,7 +9,8 @@ Vue.use(Vuex);
 const state={
     msg:[],
     candidatePop:{
-        showCandidateCriteriaIndustry:false
+        showCandidateCriteriaIndustry:false,
+        showCandidateCriteriaFunction:false,
     },
 }
 /**
@@ -42,7 +43,16 @@ const mutations={
     },
     hideCriteriaIndustryDropdown(state){
         state.candidatePop.showCandidateCriteriaIndustry = false;     
-    }
+    },
+    /**
+     * @desc 搜索控制function
+     */
+    showCriteriaFunctionDropdown(state){
+        state.candidatePop.showCandidateCriteriaFunction = true;
+    },
+    hideCriteriaFunctionDropdown(state){
+        state.candidatePop.showCandidateCriteriaFunction = false;     
+    },
 }
 /**
  * @desc getter用于将state的数据发送出去，外界调用其内部方法即可访问到state

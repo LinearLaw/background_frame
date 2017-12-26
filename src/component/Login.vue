@@ -51,7 +51,11 @@
                     industryError:{
                       content:this.$t('candidate_profile.notice_msg.can_criteria_msg_selectind'),
                       controler:false
-                    }
+                    },
+                    functionError:{
+                      content:this.$t('candidate_profile.notice_msg.can_criteria_msg_selectfunc'),
+                      controler:false
+                    },
                 },
             }
         },
