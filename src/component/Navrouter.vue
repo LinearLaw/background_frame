@@ -19,6 +19,8 @@
                             <el-menu-item index="1-2"><router-link :to="{ name:'table_2'}">添加角色</router-link></el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
+                    <el-menu-item index="7"><i class="el-icon-edit"></i><router-link :to="{ name:'editors'}" >所见即所得</router-link></el-menu-item>
+
                     <el-menu-item index="4"><i class="el-icon-star-on"></i><router-link :to="{ name:'document'}" >备忘录</router-link></el-menu-item>
                     <el-menu-item index="5"><i class="el-icon-document"></i><router-link :to="{ name:'contact'}" >联系方式</router-link></el-menu-item>
                     <el-menu-item index="6"><i class="el-icon-setting"></i><router-link :to="{ name:'setting'}" >系统设置</router-link></el-menu-item>

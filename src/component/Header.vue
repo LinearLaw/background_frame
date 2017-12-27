@@ -110,9 +110,8 @@
         },
         created(){
             // this.getTitle();
-            console.log(new Date().getTime());
-            this.shareTitle="啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊",
-            this.shareContent="阿坝擦擦擦",
+            this.shareTitle="Vue project",
+            this.shareContent="Vue project",
             this.pageHref=location.href,
             this.shareImgs="http://img.zcool.cn/community/0117e2571b8b246ac72538120dd8a4.jpg"
         },

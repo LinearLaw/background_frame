@@ -16,7 +16,6 @@ import App from './component/App.vue'
  */
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
-import VueQuillEditor from 'vue-quill-editor'
 import "./less/common.less"
 /**
  * @desc 引入需要配置路由的组件
@@ -31,20 +30,29 @@ import table_2 from './component/pages/Table-2.vue';
 import setting from './component/pages/Setting.vue';
 import docu from './component/pages/Document.vue';
 import adddoc from './component/pages/AddDocument.vue';
+import editors from './component/pages/Editors.vue';
 import contact from './component/pages/Contact.vue';
 import personal from './component/pages/Personal.vue';
 import avatar from './component/pages/Avatar.vue';
 
 import {config} from './js/config.vue'
+
+import VueHtml5Editor from 'vue-html5-editor'
+
+
 require("./less/style.css")
 require("./less/font/style.css")
 /**
  * @desc 注册路由、配置路由规则
  */
 Vue.use(VueRouter)
-Vue.use(VueQuillEditor)
 Vue.use(VueResource);
 Vue.use(Meta);
+
+//import editor
+import VueQuillEditor from 'vue-quill-editor'
+Vue.use(VueQuillEditor);
+
 /**
  * @desc 注册element-ui
  */
@@ -70,7 +78,7 @@ const router = new VueRouter({
             { path: 'adddoc', name: 'adddoc', component: adddoc }
           ]
         },
-        // { path: '/document/adddoc', component: adddoc },
+        { path: 'htmleditor',name:'editors', component: editors },
         { path: 'contact', name: 'contact', component: contact },
         { path: 'personal', name: 'personal', component: personal },
         { path: 'avatar', name: 'avatar', component: avatar },
