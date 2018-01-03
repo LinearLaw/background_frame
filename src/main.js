@@ -37,8 +37,6 @@ import avatar from './component/pages/Avatar.vue';
 
 import {config} from './js/config.vue'
 
-import VueHtml5Editor from 'vue-html5-editor'
-
 
 require("./less/style.css")
 require("./less/font/style.css")

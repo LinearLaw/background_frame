@@ -20,11 +20,33 @@
    */
    export default{
     data(){
-      return{}
+      return{
+        testData:""
+      }
     },
     mounted(){
       if(!localStorage.getItem('ms_username')){
         this.$router.push({"name":"login"});
+      }
+      this.addData();
+    },
+    methods:{
+      /**
+       * async await 用法，先定义一个promise函数，函数里面写异步操作，
+       *       异步操作里面需要加入resolve()，向下呈递函数
+       *       接着定义一个async函数，里面写“ await promise函数() ”，
+       *       然后.then(()=>{})里面写函数后续要做的事情
+       */
+      getData(){
+        return new Promise((resolve)=>{
+          setTimeout(()=>{console.log(123);resolve();},3000)
+        })
+      },
+      async addData(){
+        await this.getData().then(()=>{
+          console.log(234);
+        });
+        
       }
     }
    }
